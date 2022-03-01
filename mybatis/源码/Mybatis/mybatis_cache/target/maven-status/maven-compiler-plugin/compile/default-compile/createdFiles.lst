@@ -1,0 +1,4 @@
+com\shj\domain\User.class
+com\shj\utils\MybatisUtils.class
+com\shj\dao\UserMapper.class
+com\shj\utils\IDutils.class

@@ -1,0 +1,6 @@
+spring:
+  mail:
+    username: shangjinv6@163.com
+    host: smtp.163.com
+    password: 951780442sj
+    properties.mail.smtp.auth: true

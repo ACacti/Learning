@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dynamicsql.dao.BlogMapper">
+    <!-- id名随便取 -->
+    <sql id="if-author-title">
+        <if test="author!= null">
+            and author=#{author}
+        </if>
+        <if test="title != null">
+            and title =#{title}
+        </if>
+    </sql>
+    <select id="getBlogs" parameterType="map" resultType="Blog">
+        select * from blog
+        <!-- 将前面的sql片段插入于此 -->
+        <where>
+            <include refid="if-author-title"></include>
+        </where>
+    </select>
+    <select id="getBlogsByAuthor" parameterType="User" resultType="Blog">
+        select * from blog where 1=1
+        <if test="name!=null">
+            and author=#{name}
+        </if>
+    </select>
+    <select id="getThreeBlogs" parameterType="map" resultType="Blog">
+        select * from blog
+        <where>
+            <foreach collection="authors" item="author" open="(" close=")" separator=" or ">
+                author = #{author}
+            </foreach>
+        </where>
+    </select>
+
+
+</mapper>

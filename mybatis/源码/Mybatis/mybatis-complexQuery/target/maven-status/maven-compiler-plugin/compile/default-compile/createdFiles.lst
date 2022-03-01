@@ -1,0 +1,5 @@
+com\shj\domain\Student.class
+com\shj\domain\Teacher.class
+com\shj\utils\MybatisUtils.class
+com\shj\dao\StudentMapper.class
+com\shj\dao\TeacherMappper.class

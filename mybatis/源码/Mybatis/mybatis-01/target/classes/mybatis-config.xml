@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 核心配置文件 -->
+<configuration>
+    <!--    引入外部配置文件-->
+    <properties resource="db.properties">
+        <!-- 也可以在这里配置数据库属性 -->
+        <property name="driver" value="${driver}"/>
+        <property name="driver" value="${driver}"/>
+    </properties>
+    <typeAliases>
+        <typeAlias type="com.shj.domain.User" alias="User"></typeAlias>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <package name="com.shj.dao"/>
+    </mappers>
+</configuration>

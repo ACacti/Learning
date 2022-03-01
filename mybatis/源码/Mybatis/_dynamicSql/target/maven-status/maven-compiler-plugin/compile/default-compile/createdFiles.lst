@@ -1,0 +1,5 @@
+com\dynamicsql\dao\BlogMapper.class
+com\dynamicsql\domain\User.class
+com\dynamicsql\domain\Blog.class
+com\dynamicsql\utils\IDutils.class
+com\dynamicsql\utils\MybatisUtils.class

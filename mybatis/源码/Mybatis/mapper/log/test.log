@@ -1,0 +1,5 @@
+[DEBUG][20-02-18][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][20-02-18][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[INFO][20-02-18][com.shj.dao.UserDaoTest]info:进入了testLog4j
+[DEBUG][20-02-18][com.shj.dao.UserDaoTest]debug: 进入了testLog4j
+[ERROR][20-02-18][com.shj.dao.UserDaoTest]error进入了tetLog4j

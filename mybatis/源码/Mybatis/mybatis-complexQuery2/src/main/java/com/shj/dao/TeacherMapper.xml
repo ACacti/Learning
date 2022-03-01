@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--绑定一个指定的Dao/Mapper接口-->
+<mapper namespace="com.shj.dao.TeacherMapper">
+    <select id="getTeachers" resultType="Teacher" resultMap="TeacherMap">
+        select * from teacher;
+    </select>
+    <resultMap id="TeacherMap" type="Teacher">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+<!--        使用javaType 和ofType指定为 ArrayList<Student> 类型-->
+        <collection property="students" select="getStudents" javaType="ArrayList" ofType="Student" column="id"/>
+    </resultMap>
+    <select id="getStudents" resultType="Student" parameterType="int">
+        select * from student where tid=#{id}
+    </select>
+</mapper>

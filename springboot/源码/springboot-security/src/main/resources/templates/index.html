@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" >
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<h1>Welcome! 这是首页！</h1>
+<!--    vip1权限显示level1的页面-->
+    <div sec:authorize="hasRole('vip1')">
+        <span>level1：</span>
+        <a th:href="@{/level1/1}">page1</a>
+        <a th:href="@{/level1/2}">page2</a>
+        <a th:href="@{/level1/3}">page3</a>
+    </div>
+
+<!--    vip2权限显示level2的页面-->
+    <div sec:authorize="hasRole('vip2')">
+        <span>level2：</span>
+        <a th:href="@{/level2/1}">page1</a>
+        <a th:href="@{/level2/2}">page2</a>
+        <a th:href="@{/level2/3}">page3</a>
+    </div>
+<!--    vip3权限显示level3的页面-->
+    <div sec:authorize="hasRole('vip3')">
+        <span>level3：</span>
+        <a th:href="@{/level3/1}">page1</a>
+        <a th:href="@{/level3/2}">page2</a>
+        <a th:href="@{/level3/3}">page3</a>
+    </div>
+    <br>
+    <!-- 如果未登录: 显示登录-->
+    <div style="margin: 0 auto; width: 100px" sec:authorize="!isAuthenticated()">
+        <a style="margin-right: 30px" th:href="@{/loginpage}">登录</a>
+    </div>
+<!--    如果已登录：显示用户名，注销-->
+    <div sec:authorize="isAuthenticated()">
+        用户名：<span sec:authentication="name"></span>
+        角色：<span sec:authentication="principal.authorities"></span>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="注销">
+        </form>
+    </div>
+</body>
+</html>

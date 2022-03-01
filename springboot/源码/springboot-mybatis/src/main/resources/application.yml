@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    username: ${db.username}
+    password: ${db.password}
+    url: ${db.url}
+    driver-class-name: ${db.driver}
+# 整合Mybatis
+mybatis:
+  # 别名扫描
+  type-aliases-package: com.shj.springbootmybatis.domain
+  # mapper配置文件扫描
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  # 开启驼峰命名与数据库经典命名的转换
+  configuration:
+    map-underscore-to-camel-case: true
+  # 指明mybatis全局配置文件位置
+#  config-location: classpath:mybatis/mybatis-config.xml
+#server:
+#  servlet:
+#    context-path:
