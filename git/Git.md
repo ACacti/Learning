@@ -274,6 +274,26 @@ nothing to commit, working tree clean
 
 ![git-stage-after-commit](./暂存区2.jpg)
 
+> (一下为摘抄评论区的评论)
+>
+> 感觉大家把简单问题复杂化了，看着头晕，
+>
+> Git管理的文件分为：工作区，版本库，版本库又分为暂存区stage和暂存区分支master(仓库)
+>
+> 工作区>>>>暂存区>>>>仓库
+>
+> git add把文件从工作区>>>>暂存区，git commit把文件从暂存区>>>>仓库，
+>
+> git diff查看工作区和暂存区差异，
+>
+> git diff --cached查看暂存区和仓库差异，
+>
+> git diff HEAD 查看工作区和仓库的差异，
+>
+> git add的反向命令git checkout，撤销工作区修改，即把暂存区最新版本转移到工作区，
+>
+> git commit的反向命令git reset HEAD，就是把仓库最新版本转移到工作区。
+
 ## 5.*管理修改
 
 >  下面，我们要讨论的就是，为什么Git比其他版本控制系统设计得优秀，因为Git跟踪并管理的是修改，而非文件。 
@@ -1281,7 +1301,7 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 
 
-## 四、标签管理
+# 四、标签管理
 
 > - 命令`git tag `用于新建一个标签，默认为`HEAD`，也可以指定一个commit id；
 > - 命令`git tag -a  -m "blablabla..."`可以指定标签信息；
