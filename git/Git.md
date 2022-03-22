@@ -294,7 +294,7 @@ nothing to commit, working tree clean
 >
 > git commit的反向命令git reset HEAD，就是把仓库最新版本转移到工作区。
 
-## 5.*管理修改
+## 5.管理修改
 
 >  下面，我们要讨论的就是，为什么Git比其他版本控制系统设计得优秀，因为Git跟踪并管理的是修改，而非文件。 
 
@@ -366,9 +366,9 @@ index 76d770f..a9c5755 100644
 
 ## 6.撤销修改
 
-`git checkout -- file`:让文件回到最近一次`git commit` 或 `git add`的状态（git add 前）。
+`git checkout -- file`（新版被 `git restore <file>`代替）:撤销工作区修改，即把暂存区最新版本转移到工作区。
 
-`git reset HEAD <file>`: 将暂存区的修改撤销掉，重新放回工作区（git add后）。
+`git reset HEAD <file>`（新版被`git restore --staged`代替）:将暂存区修改重新放回工作区，并撤销暂存区修改。
 
 ```shell
 #增加readme.txt 一行'My stupid boss still prefers SVN.'
@@ -434,10 +434,10 @@ $ git commit -m "remove test.txt"
  delete mode 100644 test.txt
 ```
 
-②删除文件系勿删，你想还原
+②删除文件系误删，你想还原
 
 ```shell
-$ git checkout -- test.txt
+$ git restore test.txt
 #将工作区恢复到上一次git add 或 git commit的状态
 ```
 
@@ -555,7 +555,7 @@ $ git clone git@github.com:michaelliao/gitskills.git
 
 只有一条主分支：
 
-<img src="G:\笔记\git\主分支.png" alt="主分支" style="zoom:80%;" />
+<img src="主分支.png" alt="主分支" style="zoom:80%;" />
 
 当我们创建新的分支，例如`dev`时，Git新建了一个指针叫`dev`，指向`master`相同的提交，再把`HEAD`指向`dev`，就表示当前分支在`dev`上：
 
@@ -572,7 +572,7 @@ $ git branch
 
 
 
-<img src="G:\笔记\git\创建分支.png" alt="创建分支" style="zoom:80%;" />
+<img src="创建分支.png" alt="创建分支" style="zoom:80%;" />
 
 新分支添加修改：
 
@@ -589,7 +589,7 @@ $ git branch
 >#Switched to branch 'master'
 >```
 
-<img src="G:\笔记\git\新分支添加.png" alt="新分支添加" style="zoom:80%;" />
+<img src="新分支添加.png" />
 
 合并：
 
@@ -605,7 +605,7 @@ Fast-forward
 
 
 
-<img src="G:\笔记\git\合并.png" alt="合并" style="zoom:80%;" />
+<img src="合并.png" alt="合并" style="zoom:80%;" />
 
 删除dev分支：
 
@@ -614,9 +614,9 @@ $ git branch -d dev
 Deleted branch dev (was b17d20e).
 ```
 
-<img src="G:\笔记\git\删除dev.png" alt="删除dev" style="zoom:80%;" />
+<img src="删除dev.png" alt="删除dev" style="zoom:80%;" />
 
-## 4.*解决冲突
+## 4.解决冲突
 
 >  用带参数的`$ git log --graph --pretty=oneline --abbrev-commit`也可以看到分支的合并情况： 
 
