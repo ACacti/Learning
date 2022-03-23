@@ -188,13 +188,13 @@ HEAD is now at 83b0afe append GPL
 
 > 工作区（Working Directory）就是你在电脑里能看到的目录
 >
-> ![working-dir](./工作区.png)
+> ![working-dir](Git.assets/%E5%B7%A5%E4%BD%9C%E5%8C%BA.png)
 
 > 版本库（Repository）： 工作区有一个隐藏目录`.git`，这个不算工作区，而是Git的版本库。 
 >
 >  Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支`master`，以及指向`master`的一个指针叫`HEAD`。 
 
-![git-repo](./暂存区.jpg)
+![git-repo](Git.assets/%E6%9A%82%E5%AD%98%E5%8C%BA.jpg)
 
 > 前面讲了我们把文件往Git版本库里添加的时候，是分两步执行的：
 >
@@ -251,7 +251,7 @@ Changes to be committed:
 
 现在，暂存区的状态就变成这样了：
 
-![git-stage](./暂存区1.jpg)
+![git-stage](Git.assets/%E6%9A%82%E5%AD%98%E5%8C%BA1.jpg)
 
 所以，`git add`命令实际上就是把要提交的所有修改放到暂存区（Stage），然后，执行`git commit`就可以一次性把暂存区的所有修改提交到分支。
 
@@ -272,7 +272,7 @@ nothing to commit, working tree clean
 
 现在版本库变成了这样，暂存区就没有任何内容了：
 
-![git-stage-after-commit](./暂存区2.jpg)
+![git-stage-after-commit](Git.assets/%E6%9A%82%E5%AD%98%E5%8C%BA2.jpg)
 
 > (一下为摘抄评论区的评论)
 >
@@ -461,11 +461,11 @@ $ git restore test.txt
 
 然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴`id_rsa.pub`文件的内容：
 
-![github-addkey-1](./00.png)
+![github-addkey-1](Git.assets/00.png)
 
 点“Add Key”，你就应该看到已经添加的Key：
 
-![github-addkey-2](./11.png)
+![github-addkey-2](Git.assets/11.png)
 
 ## 1.添加远程库
 
@@ -479,11 +479,11 @@ $ git restore test.txt
 
 首先，登陆GitHub，然后，在右上角找到“Create a new repo”按钮，创建一个新的仓库：
 
-![github-create-repo-1](./22.png)
+![github-create-repo-1](Git.assets/22.png)
 
 在Repository name填入`learngit`，其他保持默认设置，点击“Create repository”按钮，就成功地创建了一个新的Git仓库：
 
-![0](.\0.png)
+![0](Git.assets/0.png)
 
 目前，在GitHub上的这个`learngit`仓库还是空的，GitHub告诉我们，可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库。
 
@@ -526,7 +526,7 @@ $ git push origin master
 
 在GitHub获取Git库地址：
 
-![获取Git库](.\获取Git库.png)
+![获取Git库](Git.assets/%E8%8E%B7%E5%8F%96Git%E5%BA%93.png)
 
 
 ```shell
@@ -555,7 +555,7 @@ $ git clone git@github.com:michaelliao/gitskills.git
 
 只有一条主分支：
 
-<img src="主分支.png" alt="主分支" style="zoom:80%;" />
+<img src="Git.assets/%E4%B8%BB%E5%88%86%E6%94%AF.png" alt="主分支" style="zoom:80%;" />
 
 当我们创建新的分支，例如`dev`时，Git新建了一个指针叫`dev`，指向`master`相同的提交，再把`HEAD`指向`dev`，就表示当前分支在`dev`上：
 
@@ -572,7 +572,7 @@ $ git branch
 
 
 
-<img src="创建分支.png" alt="创建分支" style="zoom:80%;" />
+<img src="Git.assets/%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF.png" alt="创建分支" style="zoom:80%;" />
 
 新分支添加修改：
 
@@ -589,7 +589,7 @@ $ git branch
 >#Switched to branch 'master'
 >```
 
-<img src="新分支添加.png" />
+<img src="Git.assets/%E6%96%B0%E5%88%86%E6%94%AF%E6%B7%BB%E5%8A%A0.png" />
 
 合并：
 
@@ -605,7 +605,7 @@ Fast-forward
 
 
 
-<img src="合并.png" alt="合并" style="zoom:80%;" />
+<img src="Git.assets/%E5%90%88%E5%B9%B6.png" alt="合并" style="zoom:80%;" />
 
 删除dev分支：
 
@@ -614,7 +614,7 @@ $ git branch -d dev
 Deleted branch dev (was b17d20e).
 ```
 
-<img src="删除dev.png" alt="删除dev" style="zoom:80%;" />
+<img src="Git.assets/%E5%88%A0%E9%99%A4dev.png" alt="删除dev" style="zoom:80%;" />
 
 ## 4.解决冲突
 
@@ -700,7 +700,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 我们可以直接查看readme.txt的内容：
 
-```shell
+```shellshell
 Git is a distributed version control system.
 Git is free software distributed under the GPL.
 Git has a mutable index called stage.
@@ -743,14 +743,14 @@ Deleted branch feature1 (was 14096d0).
 
 首先，仍然创建并切换`dev`分支：
 
-```
+```shell
 $ git checkout -b dev
 Switched to a new branch 'dev'
 ```
 
 修改readme.txt文件，并提交一个新的commit：
 
-```
+```shell
 $ git add readme.txt 
 $ git commit -m "add merge"
 [dev f52c633] add merge
@@ -759,14 +759,14 @@ $ git commit -m "add merge"
 
 现在，我们切换回`master`：
 
-```
+```shell
 $ git checkout master
 Switched to branch 'master'
 ```
 
 准备合并`dev`分支，请注意`--no-ff`参数，表示禁用`Fast forward`：
 
-```
+```shell
 $ git merge --no-ff -m "merge with no-ff" dev
 Merge made by the 'recursive' strategy.
  readme.txt | 1 +
@@ -777,7 +777,7 @@ Merge made by the 'recursive' strategy.
 
 合并后，我们用`git log`看看分支历史：
 
-```
+```shell
 $ git log --graph --pretty=oneline --abbrev-commit
 *   e1e9c68 (HEAD -> master) merge with no-ff
 |\  
@@ -789,13 +789,24 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 可以看到，不使用`Fast forward`模式，merge后就像这样：
 
-![git-no-ff-mode](./33.png)
+![git-no-ff-mode](Git.assets/33.png)
 
-## *6.Bug分支（未整理）
+## 6.Bug分支
 
-软件开发中，bug就像家常便饭一样。有了bug就需要修复，在Git中，由于分支是如此的强大，所以，每个bug都可以通过一个新的临时分支来修复，修复后，合并分支，然后将临时分支删除。
+当有手头工作修改还没提交，但要修复bug时：
 
-当你接到一个修复一个代号101的bug的任务时，很自然地，你想创建一个分支`issue-101`来修复它，但是，等等，当前正在`dev`上进行的工作还没有提交：
+1. 可以用`git stash`命令保留工作现场
+
+2. 切换到bug分支修复bug
+3. 恢复工作现场
+   * `git stash list`查看保存的工作现场
+   * `git stash apply <commit>`恢复工作现场，但会保留工作现场记录
+   * `git stash pop` 恢复工作现场，并删除工作现场记录
+4. `git cherry-pick <commit>`为不同分支提交同一次改动，此命令会产生一个新的commit
+
+演示：
+
+dev未完成工作
 
 ```shell
 $ git status
@@ -812,18 +823,14 @@ Changes not staged for commit:
 	modified:   readme.txt
 ```
 
-并不是你不想提交，而是工作只进行到一半，还没法提交，预计完成还需1天时间。但是，必须在两个小时内修复该bug，怎么办？
+`git stash` 保留工作现场
 
-幸好，Git还提供了一个`stash`功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：
-
-```
+``` shell
 $ git stash
 Saved working directory and index state WIP on dev: f52c633 add merge
 ```
 
-现在，用`git status`查看工作区，就是干净的（除非有没有被Git管理的文件），因此可以放心地创建分支来修复bug。
-
-首先确定要在哪个分支上修复bug，假定需要在`master`分支上修复，就从`master`创建临时分支：
+在master分支创建临时分支修改bug
 
 ```
 $ git checkout master
@@ -837,7 +844,7 @@ Switched to a new branch 'issue-101'
 
 现在修复bug，需要把“Git is free software ...”改为“Git is a free software ...”，然后提交：
 
-```
+```shell
 $ git add readme.txt 
 $ git commit -m "fix bug 101"
 [issue-101 4c805e2] fix bug 101
@@ -846,8 +853,8 @@ $ git commit -m "fix bug 101"
 
 修复完成后，切换到`master`分支，并完成合并，最后删除`issue-101`分支：
 
-```
-$ git checkout master
+```shell
+$ git switch master
 Switched to branch 'master'
 Your branch is ahead of 'origin/master' by 6 commits.
   (use "git push" to publish your local commits)
@@ -856,12 +863,15 @@ $ git merge --no-ff -m "merged bug fix 101" issue-101
 Merge made by the 'recursive' strategy.
  readme.txt | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
+$ git branch -d issue-101
+
+#git branch -D issue-101 强行删除未合并过的分支，此操作将丢失掉被删除分支的修改
 ```
 
-太棒了，原计划两个小时的bug修复只花了5分钟！现在，是时候接着回到`dev`分支干活了！
+修复完bug回到dev分支
 
-```
-$ git checkout dev
+```shell
+$ git switch dev
 Switched to branch 'dev'
 
 $ git status
@@ -869,20 +879,9 @@ On branch dev
 nothing to commit, working tree clean
 ```
 
-工作区是干净的，刚才的工作现场存到哪去了？用`git stash list`命令看看：
+恢复工作现场
 
-```
-$ git stash list
-stash@{0}: WIP on dev: f52c633 add merge
-```
-
-工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，有两个办法：
-
-一是用`git stash apply`恢复，但是恢复后，stash内容并不删除，你需要用`git stash drop`来删除；
-
-另一种方式是用`git stash pop`，恢复的同时把stash内容也删了：
-
-```
+```shell
 $ git stash pop
 On branch dev
 Changes to be committed:
@@ -899,151 +898,9 @@ Changes not staged for commit:
 Dropped refs/stash@{0} (5d677e2ee266f39ea296182fb2354265b91b3b2a)
 ```
 
-再用`git stash list`查看，就看不到任何stash内容了：
+为dev分支提交之前的bug修复
 
-```
-$ git stash list
-```
-
-你可以多次stash，恢复的时候，先用`git stash list`查看，然后恢复指定的stash，用命令：
-
-```
-$ git stash apply stash@{0}
-```
-
-软件开发中，bug就像家常便饭一样。有了bug就需要修复，在Git中，由于分支是如此的强大，所以，每个bug都可以通过一个新的临时分支来修复，修复后，合并分支，然后将临时分支删除。
-
-当你接到一个修复一个代号101的bug的任务时，很自然地，你想创建一个分支`issue-101`来修复它，但是，等等，当前正在`dev`上进行的工作还没有提交：
-
-```
-$ git status
-On branch dev
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	new file:   hello.py
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   readme.txt
-```
-
-并不是你不想提交，而是工作只进行到一半，还没法提交，预计完成还需1天时间。但是，必须在两个小时内修复该bug，怎么办？
-
-幸好，Git还提供了一个`stash`功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：
-
-```
-$ git stash
-Saved working directory and index state WIP on dev: f52c633 add merge
-```
-
-现在，用`git status`查看工作区，就是干净的（除非有没有被Git管理的文件），因此可以放心地创建分支来修复bug。
-
-首先确定要在哪个分支上修复bug，假定需要在`master`分支上修复，就从`master`创建临时分支：
-
-```
-$ git checkout master
-Switched to branch 'master'
-Your branch is ahead of 'origin/master' by 6 commits.
-  (use "git push" to publish your local commits)
-
-$ git checkout -b issue-101
-Switched to a new branch 'issue-101'
-```
-
-现在修复bug，需要把“Git is free software ...”改为“Git is a free software ...”，然后提交：
-
-```
-$ git add readme.txt 
-$ git commit -m "fix bug 101"
-[issue-101 4c805e2] fix bug 101
- 1 file changed, 1 insertion(+), 1 deletion(-)
-```
-
-修复完成后，切换到`master`分支，并完成合并，最后删除`issue-101`分支：
-
-```
-$ git checkout master
-Switched to branch 'master'
-Your branch is ahead of 'origin/master' by 6 commits.
-  (use "git push" to publish your local commits)
-
-$ git merge --no-ff -m "merged bug fix 101" issue-101
-Merge made by the 'recursive' strategy.
- readme.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-```
-
-太棒了，原计划两个小时的bug修复只花了5分钟！现在，是时候接着回到`dev`分支干活了！
-
-```
-$ git checkout dev
-Switched to branch 'dev'
-
-$ git status
-On branch dev
-nothing to commit, working tree clean
-```
-
-工作区是干净的，刚才的工作现场存到哪去了？用`git stash list`命令看看：
-
-```
-$ git stash list
-stash@{0}: WIP on dev: f52c633 add merge
-```
-
-工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，有两个办法：
-
-一是用`git stash apply`恢复，但是恢复后，stash内容并不删除，你需要用`git stash drop`来删除；
-
-另一种方式是用`git stash pop`，恢复的同时把stash内容也删了：
-
-```
-$ git stash pop
-On branch dev
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-	new file:   hello.py
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   readme.txt
-
-Dropped refs/stash@{0} (5d677e2ee266f39ea296182fb2354265b91b3b2a)
-```
-
-再用`git stash list`查看，就看不到任何stash内容了：
-
-```
-$ git stash list
-```
-
-你可以多次stash，恢复的时候，先用`git stash list`查看，然后恢复指定的stash，用命令：
-
-```
-$ git stash apply stash@{0}
-```
-
-
-
-在master分支上修复了bug后，我们要想一想，dev分支是早期从master分支分出来的，所以，这个bug其实在当前dev分支上也存在。
-
-那怎么在dev分支上修复同样的bug？重复操作一次，提交不就行了？
-
-有木有更简单的方法？
-
-有！
-
-同样的bug，要在dev上修复，我们只需要把`4c805e2 fix bug 101`这个提交所做的修改“复制”到dev分支。注意：我们只想复制`4c805e2 fix bug 101`这个提交所做的修改，并不是把整个master分支merge过来。
-
-为了方便操作，Git专门提供了一个`cherry-pick`命令，让我们能复制一个特定的提交到当前分支：
-
-```
+```shell
 $ git branch
 * dev
   master
@@ -1052,17 +909,7 @@ $ git cherry-pick 4c805e2
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
-Git自动给dev分支做了一次提交，注意这次提交的commit是`1d4b803`，它并不同于master的`4c805e2`，因为这两个commit只是改动相同，但确实是两个不同的commit。用`git cherry-pick`，我们就不需要在dev分支上手动再把修bug的过程重复一遍。
 
-有些聪明的童鞋会想了，既然可以在master分支上修复bug后，在dev分支上可以“重放”这个修复过程，那么直接在dev分支上修复bug，然后在master分支上“重放”行不行？当然可以，不过你仍然需要`git stash`命令保存现场，才能从dev分支切换到master分支。
-
-
-
-修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；
-
-当手头工作没有完成时，先把工作现场`git stash`一下，然后去修复bug，修复后，再`git stash pop`，回到工作现场；
-
-在master分支上修复的bug，想要合并到当前dev分支，可以用`git cherry-pick `命令，把bug提交的修改“复制”到当前分支，避免重复劳动。
 
 ## 7.多人协作
 
@@ -1122,7 +969,7 @@ $ git push origin :branch-name
 
 每次合并再push后，分支变成了这样：
 
-```
+```shell
 $ git log --graph --pretty=oneline --abbrev-commit
 * d1be385 (HEAD -> master, origin/master) init hello
 *   e5e69f1 Merge branch 'dev'
@@ -1150,13 +997,13 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 Git有一种称为rebase的操作，有人把它翻译成“变基”。
 
-![rebase](https://www.liaoxuefeng.com/files/attachments/1216294032394112/l)
+![rebase](Git.assets/l.jpeg)
 
 先不要随意展开想象。我们还是从实际问题出发，看看怎么把分叉的提交变成直线。
 
 在和远程分支同步后，我们对`hello.py`这个文件做了两次提交。用`git log`命令看看：
 
-```
+```shell
 $ git log --graph --pretty=oneline --abbrev-commit
 * 582d922 (HEAD -> master) add author
 * 8875536 add comment
@@ -1174,7 +1021,7 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 现在我们尝试推送本地分支：
 
-```
+```shell
 $ git push origin master
 To github.com:michaelliao/learngit.git
  ! [rejected]        master -> master (fetch first)
@@ -1188,7 +1035,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 很不幸，失败了，这说明有人先于我们推送了远程分支。按照经验，先pull一下：
 
-```
+```shell
 $ git pull
 remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (1/1), done.
@@ -1205,7 +1052,7 @@ Merge made by the 'recursive' strategy.
 
 再用`git status`看看状态：
 
-```
+```shell
 $ git status
 On branch master
 Your branch is ahead of 'origin/master' by 3 commits.
@@ -1218,7 +1065,7 @@ nothing to commit, working tree clean
 
 用`git log`看看：
 
-```
+```shell
 $ git log --graph --pretty=oneline --abbrev-commit
 *   e0ea545 (HEAD -> master) Merge branch 'master' of github.com:michaelliao/learngit
 |\  
@@ -1244,7 +1091,7 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 这个时候，rebase就派上了用场。我们输入命令`git rebase`试试：
 
-```
+```shell
 $ git rebase
 First, rewinding head to replay your work on top of it...
 Applying: add comment
@@ -1261,7 +1108,7 @@ Auto-merging hello.py
 
 输出了一大堆操作，到底是啥效果？再用`git log`看看：
 
-```
+```shell
 $ git log --graph --pretty=oneline --abbrev-commit
 * 7e61ed4 (HEAD -> master) add author
 * 3611cfe add comment
@@ -1276,7 +1123,7 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 最后，通过push操作把本地分支推送到远程：
 
-```
+```shell
 Mac:~/learngit michael$ git push origin master
 Counting objects: 6, done.
 Delta compression using up to 4 threads.
@@ -1290,7 +1137,7 @@ To github.com:michaelliao/learngit.git
 
 再用`git log`看看效果：
 
-```
+```shell
 $ git log --graph --pretty=oneline --abbrev-commit
 * 7e61ed4 (HEAD -> master, origin/master) add author
 * 3611cfe add comment
@@ -1303,50 +1150,104 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 # 四、标签管理
 
-> - 命令`git tag `用于新建一个标签，默认为`HEAD`，也可以指定一个commit id；
-> - 命令`git tag -a  -m "blablabla..."`可以指定标签信息；
+## 1.创建标签
+
+> - 命令`git tag <tagname> `用于新建一个标签，默认为`HEAD`，也可以指定一个commit id；
+> - 命令`git tag -a <tagname> -m "blablabla..."`可以指定标签信息；
+> - `git show <tagname>` 可以查看标签信息
 > - 命令`git tag`可以查看所有标签。
 
-在Git中打标签非常简单，首先，切换到需要打标签的分支上：
-
-```
-$ git branch
-* dev
-  master
-$ git checkout master
-Switched to branch 'master'
-```
-
-然后，敲命令`git tag `就可以打一个新标签：
-
-```
-$ git tag v1.0
-```
-
-可以用命令`git tag`查看所有标签：
-
-```
-$ git tag
-v1.0
-```
-
-默认标签是打在最新提交的commit上的。
-
-也可以找到提交的ID，然后对这次提交打上标签
-
-```
-$ git tag v0.9 f52c633
-```
-
- 还可以创建带有说明的标签，用`-a`指定标签名，`-m`指定说明文字 ：
-
-```
-$ git tag -a v0.1 -m "version 0.1 released" 1094adb
-
-#使用git show <tagname> 查看说明文字
-```
+## 2.操作标签
 
 > - 命令`git push origin <tagname>`可以推送一个本地标签；
+>
 > - 命令`git push origin --tags`可以推送全部未推送过的本地标签；
+>
 > - 命令`git tag -d  <tagname>`可以删除一个本地标签；
+>
 > - 命令`git push origin :refs/tags/<tagname>`可以删除一个远程标签。
+>
+> - 另一种删除远程标签的方式：
+>
+>   ` git push origin --delete <tagname>`
+
+## 3.检出标签
+
+使用`git checkout`命令检出标签，但会使仓库处于“分离头指针”状态。
+
+> 在“分离头指针”状态下，如果你做了某些更改然后提交它们，标签不会发生变化， 但你的新提交将不属于任何分支，并且将无法访问，除非通过确切的提交哈希才能访问。
+
+如果想修复就版本中的错误，通常需要创建一个新分支，然后在此分支检出标签：
+
+```shell
+$ git checkout -b version2 v2.0.0
+Switched to a new branch 'version2'
+```
+
+如果在这之后又进行了一次提交，`version2` 分支就会因为这个改动向前移动， 此时它就会和 `v2.0.0` 标签稍微有些不同，这时就要当心了。
+
+# 五、自定义Git
+
+## 1. 忽略特殊文件
+
+忽略文件的原则：
+
+1. 忽略操作系统自动生成的文件，比如缩略图等；
+2. 忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如Java编译产生的`.class`文件；
+3. 忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件。
+
+忽略文件的部分语法：
+
+```shell
+#排除某文件
+filename.suffix
+
+# 排除所有.开头的隐藏文件:
+.*
+
+# 排除所有.class文件:
+*.class
+
+# 不排除.gitignore和App.class:
+!.gitignore
+!App.class
+```
+
+与忽略文件相关的git命令：
+
+```shell
+#某文件被排除时，可强行添加
+$ git add -f App.class
+
+#检查那条忽略文件规则排除了该文件
+$ git check-ignore -v App.class
+.gitignore:3:*.class	App.class # .ignore 文件的第三行规则排除了该文件
+```
+
+## 2.配置别名
+
+将`git status`配置别名 `git st`
+
+```shell
+$ git config --global alias.st status
+```
+
+```shell
+# 记一段日后可能会用到的别名配置
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+```
+
+`--global`参数是全局参数，也就是这些命令在这台电脑的所有Git仓库下都有用。
+
+* 而当前用户的Git配置文件放在用户主目录下的一个隐藏文件`.gitconfig`中
+
+* 只对当前仓库起作用的配置文件放在仓库文件夹 `.git/config`文件中。
+
+# 六 、SourceTree
+
+Git图形化界面工具。
+
+# 七、Git参考文档
+
+官方文档：[Git - Book (git-scm.com)](http://git-scm.com/book/zh/v2)
+
