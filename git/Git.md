@@ -565,6 +565,8 @@ $ git clone git@github.com:michaelliao/gitskills.git
 
 3. `git push origin --delete dev`: 删除远程库上的`dev`分支
 
+4. `git branch -a`:查看远程库分支
+
 截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即`master`分支。`HEAD`严格来说不是指向提交，而是指向`master`，`master`才是指向提交的，所以，`HEAD`指向的就是当前分支。
 
 只有一条主分支：
