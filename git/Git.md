@@ -537,19 +537,33 @@ $ git clone git@github.com:michaelliao/gitskills.git
 
 ## 3.创建分支
 
-> 提要：
->
-> ​	查看分支：`git branch`
->
-> ​	创建分支：`git branch <name>` 
->
-> ​	切换分支：`git checkout <name>` 或者`git switch <name> `
->
-> ​	创建+切换分支：`git checkout -b <name>`或者`git switch -c <name> `
->
-> ​	合并某分支到当前分支：`git merge <name> ` 
->
-> ​	删除分支：`git branch -d <name>`
+本地分支相关操作：
+
+​	1. 查看分支：`git branch`
+
+​	2. 创建分支：`git branch <name>` 
+
+​	3. 切换分支：`git checkout <name>` 或者`git switch <name> `
+
+​	4. 创建+切换分支：`git checkout -b <name>`或者`git switch -c <name> `
+
+​	5. 合并某分支到当前分支：`git merge <name> ` 
+
+​	6. 删除分支：`git branch -d <name>`
+
+远程分支相关操作：
+
+1. `git switch --track origin/dev`: 创建一个与远程仓库`dev`分支关联的本地`dev`分支
+
+   `git switch origin/dev`:上面命令的简化版本
+
+   `git switch -c localDev  origin/dev`:创建一个与远程库`dev`分支关联的本地`localDev`分支
+
+2. `git branch -u origin/dev`:将当前分支与远程库`dev`分支关联。
+
+   `git branch --set-upstream-to=origin/dev`:效果同上
+
+3. `git push origin --delete dev`: 删除远程库上的`dev`分支
 
 截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即`master`分支。`HEAD`严格来说不是指向提交，而是指向`master`，`master`才是指向提交的，所以，`HEAD`指向的就是当前分支。
 
