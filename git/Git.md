@@ -1193,10 +1193,11 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 > 在“分离头指针”状态下，如果你做了某些更改然后提交它们，标签不会发生变化， 但你的新提交将不属于任何分支，并且将无法访问，除非通过确切的提交哈希才能访问。
 
-如果想修复就版本中的错误，通常需要创建一个新分支，然后在此分支检出标签：
+如果想修复旧版本中的错误，通常需要创建一个新分支，然后在此分支检出标签：
 
 ```shell
-$ git checkout -b version2 v2.0.0
+#git checkout -b <branchName> <tageName>
+$ git checkout -b version2 v2.0.0 #git switch -c version2 v2.0.0 效果相同？
 Switched to a new branch 'version2'
 ```
 
@@ -1239,6 +1240,8 @@ $ git add -f App.class
 $ git check-ignore -v App.class
 .gitignore:3:*.class	App.class # .ignore 文件的第三行规则排除了该文件
 ```
+
+`.gitignore`文件模板：[github/gitignore: A collection of useful .gitignore templates](https://github.com/github/gitignore)
 
 ## 2.配置别名
 
