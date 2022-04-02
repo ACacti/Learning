@@ -296,7 +296,7 @@ nothing to commit, working tree clean
 
 ## 5.管理修改
 
->  下面，我们要讨论的就是，为什么Git比其他版本控制系统设计得优秀，因为Git跟踪并管理的是修改，而非文件。 
+>  Git跟踪并管理的是修改，而非文件。 
 
 对readme.txt文件进行修改，并添加修改：
 
@@ -369,6 +369,12 @@ index 76d770f..a9c5755 100644
 `git checkout -- file`（新版被 `git restore <file>`代替）:撤销工作区修改，即把暂存区最新版本转移到工作区。
 
 `git reset HEAD <file>`（新版被`git restore --staged`代替）:将暂存区修改重新放回工作区，并撤销暂存区修改。
+
+>  `git reset 版本  --soft`:仅将版本库HEAD指针移动到相应版本
+>
+> `git reset 版本`:在 `git reset --soft`的基础上，并将该版本内容放置到暂存区
+>
+> `git reset 版本 --hard`: 在`git reset `的基础上，将暂存区的内容覆盖工作区
 
 ```shell
 #增加readme.txt 一行'My stupid boss still prefers SVN.'
