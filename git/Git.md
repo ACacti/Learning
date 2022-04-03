@@ -366,9 +366,9 @@ index 76d770f..a9c5755 100644
 
 ## 6.撤销修改
 
-`git checkout -- file`（新版被 `git restore <file>`代替）:撤销工作区修改，即把暂存区最新版本转移到工作区。
+`git restore <file>`: 撤销工作区修改，即把暂存区最新版本转移到工作区。
 
-`git reset HEAD <file>`（新版被`git restore --staged`代替）:将暂存区修改重新放回工作区，并撤销暂存区修改。
+`git restore --staged`: 将HEAD指向的内容移到暂存区（相当于清空了上次commit之后的所有add记录），工作区内容不变。
 
 >  `git reset 版本  --soft`:仅将版本库HEAD指针移动到相应版本
 >
@@ -385,7 +385,7 @@ Git has a mutable index called stage.
 Git tracks changes of files.
 My stupid boss still prefers SVN.
 
-#将修改添加到工作区
+#将修改添加到暂存区
 $ git add readme.txt
 
 # 将暂存区的修改撤销并放回工作区
@@ -395,6 +395,7 @@ M	readme.txt
 
 #将工作区的修改丢弃
 $ git checkout -- readme.txt
+# git restore readme.txt 效果一样
 
 #文件恢复到
 #Git is a distributed version control system.
