@@ -13,3 +13,4 @@
 * ctr + shift + Enter 直接在行首插入新行
 * ctr + [ 折叠代码
 * ctr + ] 展开代码
+* ctr + w 关闭当前窗口
