@@ -14,9 +14,10 @@
 * ctr + [ 折叠代码
 * ctr + ] 展开代码
 * ctr + w 关闭当前窗口
+* ctr+shift+i 列编辑模式
+* shift + del 删除整行
 
-
-### Markdown 相关
+### 插件 相关
 * `ctr` + `alt` + o :预览markdown文件 (OmniMarkdownPreview)
 * `ctr` + `shift` + x: 代码自动缩进 （CoolFormat）
 * 'ctr' + 'alt' + a : 新建文件（FileHeader）
