@@ -19,5 +19,5 @@
 
 ### 插件 相关
 * `ctr` + `alt` + o :预览markdown文件 (OmniMarkdownPreview)
-* `ctr` + `shift` + x: 代码自动缩进 （CoolFormat）
+* `ctr` + `shift` + x: 代码自动缩进 （CoolFormat） //Packages 目录自行查看
 * 'ctr' + 'alt' + a : 新建文件（FileHeader）
