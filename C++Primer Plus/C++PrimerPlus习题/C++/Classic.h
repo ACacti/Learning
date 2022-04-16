@@ -1,26 +1,25 @@
-//question13_1
+/*
+* @Author: ACacti
+* @Date:   2022-04-16 14:00:04
+* @Last Modified by:   shang
+* @Last Modified time: 2022-04-16 15:36:03
+*/
 #ifndef CLASSIC_H
 #define CLASSIC_H
 #include "Cd.h"
-#include <cstring>
-class Classic : public Cd {
+class Classic: public Cd{
 private:
-	char* primaryName;
+    char * primaryName;
+    void init(const char *pn);
 public:
-	Classic(const char* pn, const char* pf, const char* l, const int s, const double p) :
-		Cd(pf, l, s, p)
-	{
-		primaryName = new char[strlen(pn) + 1];
-		strcpy_s(primaryName, strlen(pn) + 1, pn);
-	}
-	Classic(const Classic& c) : Cd(c) {
-		primaryName = new char[strlen(c.primaryName) + 1];
-		strcpy_s(primaryName, strlen(c.primaryName) + 1, c.primaryName);
-	}
-	Classic& operator=(const Classic& c);
-	virtual void Report() const;
-	~Classic() { delete[]primaryName; }
+    Classic(const char *pn, const char *pf,
+        const char * lb, const int st, const double pt);
+    Classic(const Classic& c);
+    virtual ~Classic();
+    virtual Classic& operator=(const Classic &c);
+    virtual void Report()const;
 
 };
-#endif
 
+
+#endif

@@ -6,9 +6,9 @@ private:
 	double real;
 	double imagine;
 public:
-	//¸´Êı µÄÔËËã·¨Ôò¿ÉÒÔÍÆ¹ã£¬Ö»Òª¹¹Ôìdouble -> ComplexµÄ¹¹Ôìº¯Êı£¬ÓÃÓÑÔªÊµÏÖComplexÎª²ÎÊıµÄ+ - *ÔËËã·ûÖØÔØ
-	//¾ÍÏàµ±Íê³ÉÁË double operator Complex ºÍComplex operator double
-	//´Ë´¦µÄoperatorÖ¸ + - *ÔËËã
+	//å¤æ•° çš„è¿ç®—æ³•åˆ™å¯ä»¥æ¨å¹¿ï¼Œåªè¦æ„é€ double -> Complexçš„æ„é€ å‡½æ•°ï¼Œç”¨å‹å…ƒå®ç°Complexä¸ºå‚æ•°çš„+ - *è¿ç®—ç¬¦é‡è½½
+	//å°±ç›¸å½“å®Œæˆäº† double operator Complex å’ŒComplex operator double
+	//æ­¤å¤„çš„operatoræŒ‡ + - *è¿ç®—
 	Complex() { real = 0; imagine = 0; }
 	Complex(const double real, const double imagine = 0);
 	friend Complex operator+(const Complex& c1, const Complex& c2);

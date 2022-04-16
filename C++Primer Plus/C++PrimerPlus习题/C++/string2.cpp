@@ -4,7 +4,7 @@
 using std::cin;
 using std::cout;
 
-int String::num_strings = 0;//½«StringÀàÖĞµÄnum_strings³õÊ¼»¯
+int String::num_strings = 0;//å°†Stringç±»ä¸­çš„num_stringsåˆå§‹åŒ–
 
 int String::HowMany()
 {
@@ -24,7 +24,7 @@ String::String() {
 	str[0] = '\0';
 	num_strings++;
 }
-//¸´ÖÆ¹¹Ôìº¯Êı
+//å¤åˆ¶æ„é€ å‡½æ•°
 String::String(const String& st) {
 	num_strings++;
 	len = st.len;
@@ -84,7 +84,7 @@ ostream& operator<<(ostream& os, const String& st) {
 	return os;
 }
 
-//¶ÁÈë80¸ö×Ö·û£¬Ê£ÓàµÄ¶ªÆú
+//è¯»å…¥80ä¸ªå­—ç¬¦ï¼Œå‰©ä½™çš„ä¸¢å¼ƒ
 istream& operator>>(istream& is, String& st) {
 	char temp[String::CINLIM];
 	is.get(temp,String::CINLIM);
