@@ -17,13 +17,12 @@
 * ctr+shift+i 列编辑模式
 * shift + del 删除整行
 
-
 ### 插件 相关
+
 * `ctr` + `alt` + o :预览markdown文件 (OmniMarkdownPreview)
-<<<<<<< HEAD
+* 
 * `ctr` + `shift` + x: 代码自动缩进 （CoolFormat） //Packages 目录自行查看
 * 'ctr' + 'alt' + a : 新建文件（FileHeader）
-=======
+  =======
 * `ctr` + `shift` + x: 代码自动缩进 （CoolFormat）
 * 'ctr' + 'alt' + n : 新建文件（FileHeader）
->>>>>>> 163dfa4c608729cdf356dcb5c10a07c6b86ea86d
