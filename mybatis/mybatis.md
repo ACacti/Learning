@@ -262,7 +262,7 @@ public void addUserTest(){
 2. 在sql拼接中使用通配符
 
    ```sql
-   select *  from mybatis.user where name like "%"#{valuse}"#"
+   select *  from mybatis.user where name like "%"#{valuse}"%"
    ```
 
 ## 三、配置解析

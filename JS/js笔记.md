@@ -1186,15 +1186,11 @@ var re2 = newRegExp('ABC\\-001');//反斜杠需要转义
 >re.test('010 12345'); // false
 >```
 
-
-
 > 切分字符串
 >
 > ```javascript
 > 'a,b, c  d'.split(/[\s\,]+/); // ['a', 'b', 'c', 'd']
 > ```
-
-
 
 > 分组
 >
